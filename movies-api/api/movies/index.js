@@ -1,7 +1,9 @@
 import movieModel from './movieModel';
 import asyncHandler from 'express-async-handler';
 import express from 'express';
-import { getUpcomingMovies, getGenres } from '../tmdb-api';
+import { getUpcomingMovies, getGenres, getNowPlayingMovies,
+     getPopularMovies, getTrendingMovies, getCombinedCredits, 
+     getMovieCredits, getMovieRecommendations, getMovieReviews } from '../tmdb-api';
 
 const router = express.Router();
 
@@ -44,5 +46,55 @@ router.get('/tmdb/genres', asyncHandler(async (req, res) => {
     const genres = await getGenres();
     res.status(200).json(genres);
 }));
+
+router.get('/tmdb/nowplaying', asyncHandler(async (req, res) => {
+    const nowPlayingMovies = await getNowPlayingMovies();
+    res.status(200).json(nowPlayingMovies);
+}));
+
+router.get('/tmdb/popularmovies', asyncHandler(async (req, res) => {
+    const popularMovies = await getPopularMovies();
+    res.status(200).json(popularMovies);
+}));
+
+const validTimeWindows = ['day', 'week'];
+router.get('/tmdb/trendingmovies/:timeWindow', asyncHandler(async (req, res) => {
+    const { timeWindow } = req.params;
+    if (!validTimeWindows.includes(timeWindow)) {
+        return res.status(400).json({ message: 'Invalid time window. Use "day" or "week".' });
+      }
+    const trendingmovies = await getTrendingMovies( timeWindow );
+    res.status(200).json(trendingmovies);
+}));
+
+router.get('/tmdb/person/:personId/combinedcredits', asyncHandler(async (req, res) => {
+    const { personId } = req.params;
+    const combinedCredits = await getCombinedCredits( personId );
+    res.status(200).json(combinedCredits);
+}));
+
+router.get('/tmdb/:id/credits', asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const movieCredits = await getMovieCredits( id );
+    res.status(200).json(movieCredits);
+}));
+
+router.get('/tmdb/:id/recommendations', asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const movieRecommendations = await getMovieRecommendations( id );
+    res.status(200).json(movieRecommendations);
+}));
+
+router.get('/tmdb/:id/reviews', asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const movieReviews = await getMovieReviews( id );
+    res.status(200).json(movieReviews);
+}));
+
+
+
+
+
+
 
 export default router;

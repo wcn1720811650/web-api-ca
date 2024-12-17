@@ -18,6 +18,25 @@ router.get('/', async (req, res) => {
     res.status(200).json(users);
 });
 
+router.get('/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+
+        const user = await User.findById(id);
+        console.log(user);
+
+        if (!user) {
+            return res.status(404).json({ code: 404, msg: "User not found" });
+        }
+
+        res.status(200).json(user);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ code: 500, msg: "Internal server error" });
+    }
+})
+
 // register(Create)/Authenticate User
 router.post('/', asyncHandler(async (req, res) => {
     try {
@@ -86,4 +105,4 @@ async function authenticateUser(req, res) {
     }
 }
 
-export default router
+export default router;

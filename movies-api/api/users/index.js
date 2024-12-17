@@ -3,6 +3,7 @@ import User from './userModel';
 import asyncHandler from 'express-async-handler';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken';
+import { validationResult } from 'express-validator'
 
 
 const router = express.Router();
@@ -49,9 +50,25 @@ router.put('/:id', async (req, res) => {
 });
 
 async function registerUser(req, res) {
-    // Add input validation logic here
-    await User.create(req.body);
-    res.status(201).json({ success: true, msg: 'User successfully created.' });
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ success: false, errors: errors.array() })
+    }
+    const {username, password} = req.body;
+
+    const existingUser = await User.findOne({ username })
+    if (existingUser) {
+        return res.status(400).json({ success: false, msg: 'username already exists'})
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10)
+
+    const newUser = await User.create({
+        username,
+        password:hashedPassword
+    })
+
+    res.status(201).json({ success: true, msg: 'User successfully created.', user: {username:newUser.username} });
 }
 
 async function authenticateUser(req, res) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Navigate, Routes, useLocation } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
@@ -18,6 +18,8 @@ import TredingPage from "./pages/trendingTodayPage";
 import MovieCreditPage from "./pages/movieCreditPage";
 import CombinedCreditsPage from "./pages/combinedCreditsPage";
 import LoginPage from "./pages/loginPage"
+import RegisterPage from "./pages/registerPage"
+
 const queryClient = new QueryClient({
   defaultOptions:{
     queries:{
@@ -31,7 +33,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <SiteHeader />
+        <ConditionHeader/>
         <MoviesContextProvider>
         <Routes>
           <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
@@ -40,14 +42,16 @@ const App = () => {
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/trending/:timeWindow" element={<TredingPage />} />
           <Route path="/recommendations/:recommendationId" element={<MovieRecommendationPage />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={ <Navigate to="/" /> } />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="*" element={ <Navigate to="/login" /> } />
+          <Route path="/" element={<Navigate to="/login" />}/>
           <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
           <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
           <Route path="/movies/nowplaying" element={<NowPlayingMoviesPage />} />
           <Route path="/movies/popular" element={<PopularMoviesPage />} />
           <Route path="/person/:id/combined_credits" element={<CombinedCreditsPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
 
           </Routes>
         </MoviesContextProvider>
@@ -57,5 +61,12 @@ const App = () => {
   );
 };
 
+const ConditionHeader = () =>{
+  const location = useLocation();
+  if (location.pathname === '/login' || location.pathname === '/register') {
+    return null;
+  }
+  return <SiteHeader/>
+}
 const rootElement = createRoot( document.getElementById("root") )
 rootElement.render(<App />);

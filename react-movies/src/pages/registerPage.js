@@ -9,6 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState('');
 
 
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Login = () => {
         setSuccess(null);
 
         try {
-            const response = await fetch('http://localhost:8080/api/users?action=login', {
+            const response = await fetch('http://localhost:8080/api/users?action=register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -30,8 +31,10 @@ const Login = () => {
             if (response.ok) {
                 setSuccess(data.msg);
                 localStorage.setItem('token', data.token); 
-                navigate('/home')
-            } else {
+                navigate('/login')
+            } else if (password !== confirmPassword){
+                setError("The two passwords are different")
+            }else {
                 setError(data.msg);
             }
         } catch (err) {
@@ -42,7 +45,7 @@ const Login = () => {
 
     return (
         <div>
-            <h2>Login</h2>
+            <h2>Register</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <TextField
@@ -66,8 +69,19 @@ const Login = () => {
                         required
                     />
                 </div>
-                <Button style={{backgroundColor:'rgb(156,39,176)', color:"white", margin:'10px'}} type="submit">Login</Button>
-                <Button style={{backgroundColor:'rgb(156,39,176)', color:"white", margin:'10px'}} href='/register'>Register</Button>
+                <div>
+                    <TextField
+                        style={{margin:'10px'}}
+                        label="ConfirmPassword"
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        placeholder="Enter your password"
+                        required
+                    />
+                </div>
+                <Button style={{backgroundColor:'rgb(156,39,176)', color:"white", margin:'10px'}} type="submit">Register</Button>
+                <Button style={{backgroundColor:'rgb(156,39,176)', color:"white", margin:'10px'}} href='/login'>Return to Login</Button>
             </form>
             {error && <Alert severity="error">{error}</Alert>}
         </div>

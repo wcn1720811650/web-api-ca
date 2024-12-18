@@ -17,7 +17,7 @@ import PopularMoviesPage from "./pages/popularMoviesPage";
 import TredingPage from "./pages/trendingTodayPage";
 import MovieCreditPage from "./pages/movieCreditPage";
 import CombinedCreditsPage from "./pages/combinedCreditsPage";
-
+import LoginPage from "./pages/loginPage"
 const queryClient = new QueryClient({
   defaultOptions:{
     queries:{
@@ -47,6 +47,8 @@ const App = () => {
           <Route path="/movies/nowplaying" element={<NowPlayingMoviesPage />} />
           <Route path="/movies/popular" element={<PopularMoviesPage />} />
           <Route path="/person/:id/combined_credits" element={<CombinedCreditsPage />} />
+          <Route path="/login" element={<LoginPage />} />
+
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>

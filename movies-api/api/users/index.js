@@ -94,11 +94,13 @@ async function registerUser(req, res) {
 
 async function authenticateUser(req, res) {
     const user = await User.findByUserName(req.body.username);
+    
     if (!user) {
         return res.status(401).json({ success: false, msg: 'Authentication failed. User not found.' });
-    }
-
-    const isMatch = await user.comparePassword(req.body.password);
+    }   
+    
+    const isMatch = await bcrypt.compare(req.body.password,user.password);
+        
     if (isMatch) {
         const token = jwt.sign({ username: user.username }, process.env.SECRET);
         res.status(200).json({ success: true, token: 'BEARER ' + token });

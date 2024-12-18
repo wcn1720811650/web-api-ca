@@ -74,7 +74,9 @@ async function registerUser(req, res) {
         return res.status(400).json({ success: false, errors: errors.array() })
     }
     const {username, password} = req.body;
-
+    if (!validPassword(password)) {
+        return res.status(400).json({ success:false, msg:"Invalid password"})
+    }
     const existingUser = await User.findOne({ username })
     if (existingUser) {
         return res.status(400).json({ success: false, msg: 'username already exists'})

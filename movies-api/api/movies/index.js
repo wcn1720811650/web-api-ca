@@ -4,8 +4,12 @@ import express from 'express';
 import { getUpcomingMovies, getGenres, getNowPlayingMovies,
      getPopularMovies, getTrendingMovies, getCombinedCredits, 
      getMovieCredits, getMovieRecommendations, getMovieReviews } from '../tmdb-api';
+import reviewsRouter from '../reviews/index.js';
 
 const router = express.Router();
+
+router.use('/:id/reviews', reviewsRouter);
+
 
 router.get('/', asyncHandler(async (req, res) => {
     let { page = 1, limit = 10 } = req.query; // destructure page and limit and set default values

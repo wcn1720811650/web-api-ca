@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 
 const MovieSchema = new Schema({
+  
   adult: { type: Boolean },
   id: { type: Number, required: true, unique: true },
   poster_path: { type: String },
@@ -28,7 +29,8 @@ const MovieSchema = new Schema({
     name: { type: String }
   }],
   status: { type: String },
-  tagline: { type: String }
+  tagline: { type: String },
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Reviews' }]
 });
 
 MovieSchema.statics.findByMovieDBId = function (id) {

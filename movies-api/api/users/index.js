@@ -12,7 +12,7 @@ function validPassword(password) {
     const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     return regex.test(password)
 }
-// Get all users
+
 router.get('/', async (req, res) => {
     const users = await User.find();
     res.status(200).json(users);
@@ -37,7 +37,6 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-// register(Create)/Authenticate User
 router.post('/', asyncHandler(async (req, res) => {
     try {
         if (!req.body.username || !req.body.password) {
@@ -49,13 +48,13 @@ router.post('/', asyncHandler(async (req, res) => {
             await authenticateUser(req, res);
         }
     } catch (error) {
-        // Log the error and return a generic error message
+
         console.error(error);
         res.status(500).json({ success: false, msg: 'Internal server error.' });
     }
 }));
 
-// Update a user
+
 router.put('/:id', async (req, res) => {
     if (req.body._id) delete req.body._id;
     const result = await User.updateOne({

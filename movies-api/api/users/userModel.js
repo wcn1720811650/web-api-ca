@@ -5,7 +5,9 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   username: { type: String, unique: true, required: true},
-  password: {type: String, required: true }
+  password: {type: String, required: true },
+  favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movies', default: [] }]
+
 });
 UserSchema.methods.comparePassword = async function (passw) { 
   return await bcrypt.compare(passw, this.password); 

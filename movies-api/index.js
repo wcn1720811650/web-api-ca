@@ -4,6 +4,7 @@ import cors from 'cors';
 import usersRouter from './api/users';
 import moviesRouter from './api/movies';
 import reviewsRouter from './api/reviews'  
+import favouriteRouter from './api/favourites'
 import './db';
 import defaultErrHandler from './errHandler'
 import authenticate from './authenticate';
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use('/api/users', usersRouter);
 app.use('/api/movies', authenticate, moviesRouter);
 app.use('/api/reviews',authenticate, reviewsRouter);
+app.use('/api/favourites',authenticate, favouriteRouter);
 
 
 app.use(defaultErrHandler);

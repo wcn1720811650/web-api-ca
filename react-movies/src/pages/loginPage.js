@@ -30,6 +30,9 @@ const Login = () => {
             if (response.ok) {
                 setSuccess(data.msg);
                 localStorage.setItem('token', data.token); 
+                localStorage.setItem('username', username);
+                
+                
                 navigate('/home')
             } else {
                 setError(data.msg);

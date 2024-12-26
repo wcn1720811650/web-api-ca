@@ -17,7 +17,7 @@ const SiteHeader = () => {
   const navigate = useNavigate();
 
   const menuOptions = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/home" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "upcoming", path: "/movies/upcoming" },
     { label: "NowPlaying", path: "/movies/nowplaying" },

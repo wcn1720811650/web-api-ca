@@ -12,7 +12,10 @@ const ReviewSchema = new Schema({
         rating: { type: Number, min: 0, max: 10 }
     },
     content: { type: String, required: true },
-    url: { type: String, required: true },
+    movie: {                      
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Movies',
+      },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 });

@@ -402,6 +402,428 @@ const movies = [
         "video": false,
         "vote_average": 6.3,
         "vote_count": 184
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg",
+        "genre_ids": [
+            28,
+            878,
+            12,
+            53
+        ],
+        "id": 912649,
+        "original_language": "en",
+        "original_title": "Venom: The Last Dance",
+        "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+        "popularity": 4545.315,
+        "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+        "release_date": "2024-10-22",
+        "title": "Venom: The Last Dance",
+        "video": false,
+        "vote_average": 6.802,
+        "vote_count": 1878
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/cjEcqdRdPQJhYre3HUAc5538Gk8.jpg",
+        "genre_ids": [
+            28,
+            14,
+            35
+        ],
+        "id": 845781,
+        "original_language": "en",
+        "original_title": "Red One",
+        "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+        "popularity": 5982.016,
+        "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+        "release_date": "2024-10-31",
+        "title": "Red One",
+        "video": false,
+        "vote_average": 7.012,
+        "vote_count": 1422
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+        "genre_ids": [
+            28,
+            878,
+            35,
+            10751
+        ],
+        "id": 939243,
+        "original_language": "en",
+        "original_title": "Sonic the Hedgehog 3",
+        "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+        "popularity": 3663.337,
+        "poster_path": "/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg",
+        "release_date": "2024-12-19",
+        "title": "Sonic the Hedgehog 3",
+        "video": false,
+        "vote_average": 7.8,
+        "vote_count": 124
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+        "genre_ids": [
+            12,
+            10751,
+            18,
+            16
+        ],
+        "id": 762509,
+        "original_language": "en",
+        "original_title": "Mufasa: The Lion King",
+        "overview": "Told in flashbacks, Mufasa is an orphaned cub, lost and alone until he meets a sympathetic lion named Taka—the heir to a royal bloodline. The chance meeting sets in motion a journey of misfits searching for their destiny and working together to evade a threatening and deadly foe.",
+        "popularity": 3478.204,
+        "poster_path": "/lurEK87kukWNaHd0zYnsi3yzJrs.jpg",
+        "release_date": "2024-12-18",
+        "title": "Mufasa: The Lion King",
+        "video": false,
+        "vote_average": 7.059,
+        "vote_count": 227
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/tElnmtQ6yz1PjN1kePNl8yMSb59.jpg",
+        "genre_ids": [
+            16,
+            12,
+            10751,
+            35
+        ],
+        "id": 1241982,
+        "original_language": "en",
+        "original_title": "Moana 2",
+        "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+        "popularity": 3176.216,
+        "poster_path": "/4YZpsylmjHbqeWzjKpUEF8gcLNW.jpg",
+        "release_date": "2024-11-21",
+        "title": "Moana 2",
+        "video": false,
+        "vote_average": 6.931,
+        "vote_count": 605
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/rhc8Mtuo3Kh8CndnlmTNMF8o9pU.jpg",
+        "genre_ids": [
+            28,
+            53
+        ],
+        "id": 1005331,
+        "original_language": "en",
+        "original_title": "Carry-On",
+        "overview": "An airport security officer races to outsmart a mysterious traveler forcing him to let a dangerous item slip onto a Christmas Eve flight.",
+        "popularity": 2430.202,
+        "poster_path": "/sjMN7DRi4sGiledsmllEw5HJjPy.jpg",
+        "release_date": "2024-12-05",
+        "title": "Carry-On",
+        "video": false,
+        "vote_average": 7,
+        "vote_count": 1016
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/euYIwmwkmz95mnXvufEmbL6ovhZ.jpg",
+        "genre_ids": [
+            28,
+            12,
+            18
+        ],
+        "id": 558449,
+        "original_language": "en",
+        "original_title": "Gladiator II",
+        "overview": "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist. With rage in his heart and the future of the Empire at stake, Lucius must look to his past to find strength and honor to return the glory of Rome to its people.",
+        "popularity": 2996.003,
+        "poster_path": "/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg",
+        "release_date": "2024-11-05",
+        "title": "Gladiator II",
+        "video": false,
+        "vote_average": 6.7,
+        "vote_count": 1416
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/cI3nL7CgGmPr0CizCwFHBpDkKyB.jpg",
+        "genre_ids": [
+            10749,
+            18
+        ],
+        "id": 1156593,
+        "original_language": "es",
+        "original_title": "Culpa tuya",
+        "overview": "The love between Noah and Nick seems unwavering despite their parents' attempts to separate them. But his job and her entry into college open up their lives to new relationships that will shake the foundations of both their relationship and the Leister family itself.",
+        "popularity": 2019.632,
+        "poster_path": "/1sQA7lfcF9yUyoLYC0e6Zo3jmxE.jpg",
+        "release_date": "2024-12-26",
+        "title": "Culpa tuya",
+        "video": false,
+        "vote_average": 8.2,
+        "vote_count": 40
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/dWkdmxIkH9y23s9v1PjQFhTGIwo.jpg",
+        "genre_ids": [
+            28,
+            18,
+            53
+        ],
+        "id": 1043905,
+        "original_language": "en",
+        "original_title": "Dirty Angels",
+        "overview": "During the United States' 2021 withdrawal from Afghanistan, a group of female soldiers posing as medical relief are sent back in to rescue a group of kidnapped teenagers caught between ISIS and the Taliban.",
+        "popularity": 2073.9,
+        "poster_path": "/3O3qSGmjRGc10hMwFul8WDxKE5t.jpg",
+        "release_date": "2024-12-11",
+        "title": "Dirty Angels",
+        "video": false,
+        "vote_average": 6.6,
+        "vote_count": 38
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/au3o84ub27qTZiMiEc9UYzN74V3.jpg",
+        "genre_ids": [
+            28,
+            878,
+            53
+        ],
+        "id": 1035048,
+        "original_language": "en",
+        "original_title": "Elevation",
+        "overview": "A single father and two women venture from the safety of their homes to face monstrous creatures to save the life of a young boy.",
+        "popularity": 1680.289,
+        "poster_path": "/uQhYBxOVFU6s9agD49FnGHwJqG5.jpg",
+        "release_date": "2024-11-07",
+        "title": "Elevation",
+        "video": false,
+        "vote_average": 6.312,
+        "vote_count": 194
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/6lE2e6j8qbtQR8aHxQNJlwxdmKV.jpg",
+        "genre_ids": [
+            28,
+            80,
+            53
+        ],
+        "id": 974453,
+        "original_language": "en",
+        "original_title": "Absolution",
+        "overview": "An aging ex-boxer gangster working as muscle for a Boston crime boss receives an upsetting diagnosis.  Despite a faltering memory, he attempts to rectify the sins of his past and reconnect with his estranged children. He is determined to leave a positive legacy for his grandson, but the criminal underworld isn’t done with him and won’t loosen their grip willingly.",
+        "popularity": 1517.556,
+        "poster_path": "/2MeQG5Vq8rUnRAa463BZe5GNhVk.jpg",
+        "release_date": "2024-10-31",
+        "title": "Absolution",
+        "video": false,
+        "vote_average": 6.1,
+        "vote_count": 176
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+        "genre_ids": [
+            28,
+            12,
+            53
+        ],
+        "id": 539972,
+        "original_language": "en",
+        "original_title": "Kraven the Hunter",
+        "overview": "Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.",
+        "popularity": 974.578,
+        "poster_path": "/i47IUSsN126K11JUzqQIOi1Mg1M.jpg",
+        "release_date": "2024-12-11",
+        "title": "Kraven the Hunter",
+        "video": false,
+        "vote_average": 5.844,
+        "vote_count": 211
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/mvDMt3JZ5zlsrXduGzj9jBEfVBT.jpg",
+        "genre_ids": [
+            27,
+            53
+        ],
+        "id": 1034541,
+        "original_language": "en",
+        "original_title": "Terrifier 3",
+        "overview": "Five years after surviving Art the Clown's Halloween massacre, Sienna and Jonathan are still struggling to rebuild their shattered lives. As the holiday season approaches, they try to embrace the Christmas spirit and leave the horrors of the past behind. But just when they think they're safe, Art returns, determined to turn their holiday cheer into a new nightmare. The festive season quickly unravels as Art unleashes his twisted brand of terror, proving that no holiday is safe.",
+        "popularity": 888.738,
+        "poster_path": "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg",
+        "release_date": "2024-10-09",
+        "title": "Terrifier 3",
+        "video": false,
+        "vote_average": 6.9,
+        "vote_count": 1296
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/4cp40IyTpFfsT2IKpl0YlUkMBIR.jpg",
+        "genre_ids": [
+            10749,
+            35,
+            18
+        ],
+        "id": 1064213,
+        "original_language": "en",
+        "original_title": "Anora",
+        "overview": "A young sex worker from Brooklyn gets her chance at a Cinderella story when she meets and impulsively marries the son of an oligarch. Once the news reaches Russia, her fairytale is threatened as his parents set out to get the marriage annulled.",
+        "popularity": 883.417,
+        "poster_path": "/7MrgIUeq0DD2iF7GR6wqJfYZNeC.jpg",
+        "release_date": "2024-10-14",
+        "title": "Anora",
+        "video": false,
+        "vote_average": 7.1,
+        "vote_count": 511
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/rWs3Q9bT7zCH6t004z67UGuWUwu.jpg",
+        "genre_ids": [
+            16,
+            35,
+            10751,
+            14,
+            12
+        ],
+        "id": 645757,
+        "original_language": "en",
+        "original_title": "That Christmas",
+        "overview": "It's an unforgettable Christmas for the townsfolk of Wellington-on-Sea when the worst snowstorm in history alters everyone's plans — including Santa's.",
+        "popularity": 731.989,
+        "poster_path": "/bX6dx2U4hOk1esI7mYwtD3cEKdC.jpg",
+        "release_date": "2024-11-27",
+        "title": "That Christmas",
+        "video": false,
+        "vote_average": 7.2,
+        "vote_count": 244
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/t98L9uphqBSNn2Mkvdm3xSFCQyi.jpg",
+        "genre_ids": [
+            27,
+            878,
+            18
+        ],
+        "id": 933260,
+        "original_language": "en",
+        "original_title": "The Substance",
+        "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+        "popularity": 914.377,
+        "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+        "release_date": "2024-09-07",
+        "title": "The Substance",
+        "video": false,
+        "vote_average": 7.204,
+        "vote_count": 2768
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/evFChfYeD2LqobEJf8iQsrYcGTw.jpg",
+        "genre_ids": [
+            28,
+            80,
+            53
+        ],
+        "id": 1182387,
+        "original_language": "en",
+        "original_title": "Armor",
+        "overview": "Armored truck security guard James Brody is working with his son Casey transporting millions of dollars between banks when a team of thieves led by Rook orchestrate a takeover of their truck to seize the riches. Following a violent car chase, Rook soon has the armored truck surrounded and James and Casey find themselves cornered onto a decrepit bridge.",
+        "popularity": 768.49,
+        "poster_path": "/685wCHwr2kyQZxvThNIM04HuuCt.jpg",
+        "release_date": "2024-10-30",
+        "title": "Armor",
+        "video": false,
+        "vote_average": 5.6,
+        "vote_count": 92
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/ag66gJCiZ06q1GSJuQlhGLi3Udx.jpg",
+        "genre_ids": [
+            27,
+            53
+        ],
+        "id": 1138194,
+        "original_language": "en",
+        "original_title": "Heretic",
+        "overview": "Two young missionaries are forced to prove their faith when they knock on the wrong door and are greeted by a diabolical Mr. Reed, becoming ensnared in his deadly game of cat-and-mouse.",
+        "popularity": 792.422,
+        "poster_path": "/5HJqjCTcaE1TFwnNh3Dn21be2es.jpg",
+        "release_date": "2024-10-31",
+        "title": "Heretic",
+        "video": false,
+        "vote_average": 7.1,
+        "vote_count": 555
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/h3fwlwHotd3JfV13HdW0mxDcxPD.jpg",
+        "genre_ids": [
+            35,
+            10749
+        ],
+        "id": 957119,
+        "original_language": "en",
+        "original_title": "Sidelined: The QB and Me",
+        "overview": "Dallas, a burdened but headstrong dancer, is determined to get into the best dance school in the country—her late mother’s alma mater. However, that dream is suddenly derailed when the cheeky yet secretly grieving football star, Drayton, crashes into her life with a unique story of his own. Will the two of them be able to grow into their dreams together, or will their dreams be sidelined?",
+        "popularity": 715.696,
+        "poster_path": "/hklQwv6QVoOp5bWyh1bjuF2ydyG.jpg",
+        "release_date": "2024-11-29",
+        "title": "Sidelined: The QB and Me",
+        "video": false,
+        "vote_average": 6.3,
+        "vote_count": 80
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/uVlUu174iiKhsUGqnOSy46eIIMU.jpg",
+        "genre_ids": [
+            18,
+            10749,
+            14
+        ],
+        "id": 402431,
+        "original_language": "en",
+        "original_title": "Wicked",
+        "overview": "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+        "popularity": 659.361,
+        "poster_path": "/xDGbZ0JJ3mYaGKy4Nzd9Kph6M9L.jpg",
+        "release_date": "2024-11-20",
+        "title": "Wicked",
+        "video": false,
+        "vote_average": 7.5,
+        "vote_count": 659
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/cHF6uYmmPARTSRr3vP3vziriuOI.jpg",
+        "genre_ids": [
+            16,
+            9648,
+            878,
+            28
+        ],
+        "id": 1299652,
+        "original_language": "en",
+        "original_title": "Watchmen: Chapter II",
+        "overview": "Suspicious of the events ensnaring their former colleagues, Nite Owl and Silk Spectre are spurred out of retirement to investigate. As they grapple with personal ethics, inner demons and a society turned against them, they race the clock to uncover a deepening plot that might trigger global nuclear war.",
+        "popularity": 724.182,
+        "poster_path": "/wUSXPLD3tLWdesY7nYwUitYRI50.jpg",
+        "release_date": "2024-11-25",
+        "title": "Watchmen: Chapter II",
+        "video": false,
+        "vote_average": 7.6,
+        "vote_count": 58
     }
 ];
 

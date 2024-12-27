@@ -2,6 +2,7 @@ import express from 'express';
 import asyncHandler from 'express-async-handler';
 import Reviews from './reviewModel.js';
 import movieModel from '../movies/movieModel.js';
+import User from '../users/userModel.js';
 
 const router = express.Router({ mergeParams: true });
 
@@ -22,9 +23,9 @@ async function getMovieByTMDBId(res, id) {
 }
 
 
-router.post('/', asyncHandler(async (req, res) => {
+router.post('/:id', asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { content, url } = req.body;
+  const { content } = req.body;
   
   if (!req.user || !req.user.username) {
     return res.status(401).json({ error: 'Unauthorized: no user logged in' });
@@ -32,9 +33,6 @@ router.post('/', asyncHandler(async (req, res) => {
 
   if (!content) {
     return res.status(400).json({ error: 'Missing required field: content' });
-  }
-  if (!url) {
-    return res.status(400).json({ error: 'Missing required field: url' });
   }
 
   const movie = await getMovieByTMDBId(res, id);
@@ -47,9 +45,13 @@ router.post('/', asyncHandler(async (req, res) => {
         username: req.user.username
       },
       content,
-      url,
       movie: movie._id
     });
+    const user = await User.findOne({ username: req.user.username });
+    if (user) {
+      user.reviews.push(newReview._id);
+      await user.save();
+    }
 
     return res.status(201).json(newReview);
   } catch (err) {
@@ -57,8 +59,6 @@ router.post('/', asyncHandler(async (req, res) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 }));
-
-
 
 router.get('/', asyncHandler(async (req, res) => {
   try {
@@ -69,5 +69,7 @@ router.get('/', asyncHandler(async (req, res) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 }));
+
+
 
 export default router;

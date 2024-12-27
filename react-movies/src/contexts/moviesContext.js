@@ -5,14 +5,12 @@ export const MoviesContext = React.createContext(null);
 
 const MoviesContextProvider = (props) => {
   const [favorites, setFavorites] = useState( [] )
-  const [myReviews, setMyReviews] = useState( {} ) 
   const [mustWatch, setMustWatch] = useState( [] )
   
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState("error")
   const username = localStorage.getItem("username");
   const token = localStorage.getItem("token");
-  console.log(token);
   
   useEffect(() => {
     if (alertMessage) {
@@ -112,10 +110,6 @@ const MoviesContextProvider = (props) => {
     ) )
   };
 
-  const addReview = (movie, review) => {
-    setMyReviews( {...myReviews, [movie.id]: review } )
-  };
-
   const addToMustWatch = (movieId) => {
     if (!mustWatch.includes(movieId)) {
       setMustWatch((prevMovies) => {
@@ -126,9 +120,52 @@ const MoviesContextProvider = (props) => {
     }
   };
 
+  //addReview
+  const addReview = async (movieId, content) => {
+    if (!username || !token) {
+      setAlertSeverity("error");
+      setAlertMessage("User not logged in")
+      return;
+    }
+    if (!content) {
+      setAlertSeverity("error");
+      setAlertMessage("Please enter review content")
+    }
+
+    try {
+      const response = await fetch(`http://localhost:8080/api/reviews/${movieId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${token}`,
+        },
+        body: JSON.stringify({
+          content,
+        })
+      });
+      if (!response) {
+        const errorData = await response.json();
+        setAlertSeverity("error")
+        setAlertMessage(errorData.error || "Failed to add review")
+        return;
+      }
+      const newReview = await response.json()
+      console.log("New Review:", newReview);
+
+      setAlertSeverity("success");
+      setAlertMessage("Review added successfully!")
+      
+    } catch (error) {
+      setAlertSeverity("error");
+      setAlertMessage("Network error while adding review")
+    }
+  }
+
   const handleCloseAlert = () => {
     setAlertMessage("");
   };
+
+
 
   return (
     <MoviesContext.Provider
@@ -136,9 +173,9 @@ const MoviesContextProvider = (props) => {
         favorites,
         addToFavorites,
         removeFromFavorites,
-        addReview,
         mustWatch,
         addToMustWatch,
+        addReview,
       }}
     >
       {props.children}

@@ -19,6 +19,7 @@ import MovieCreditPage from "./pages/movieCreditPage";
 import CombinedCreditsPage from "./pages/combinedCreditsPage";
 import LoginPage from "./pages/loginPage"
 import RegisterPage from "./pages/registerPage"
+import AddReviewPage from "./pages/addReviewPage";
 
 const queryClient = new QueryClient({
   defaultOptions:{
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/credits/:id" element={ <MovieCreditPage /> } />
           <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
           <Route path="/movies/:id" element={<MoviePage />} />
+          <Route path="/movies/:id/addReview" element={<AddReviewPage />} />
           <Route path="/trending/:timeWindow" element={<TredingPage />} />
           <Route path="/recommendations/:recommendationId" element={<MovieRecommendationPage />} />
           <Route path="/home" element={<HomePage />} />

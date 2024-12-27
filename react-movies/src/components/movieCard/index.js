@@ -14,7 +14,8 @@ import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import { MoviesContext } from "../../contexts/moviesContext";
-
+import CommentIcon from "@mui/icons-material/Comment"; 
+import { IconButton } from "@mui/material";
 
 export default function MovieCard({ movie, action }) { 
   const { favorites } = useContext(MoviesContext);
@@ -70,12 +71,15 @@ export default function MovieCard({ movie, action }) {
       <CardActions disableSpacing>
       
         {action(movie)}
-      
+        <IconButton component={Link} to={`/movies/${movie.id}/addReview`}>
+          <CommentIcon />
+        </IconButton>
         <Link to={`/movies/${movie.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
         </Link>
+        
         <div>
       <Link to={`/recommendations/${movie.id}`}>
       <Button variant="outlined" size="medium" color="primary">

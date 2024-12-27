@@ -4,6 +4,7 @@ import asyncHandler from 'express-async-handler';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator'
+import authenticate from '../../authenticate'
 
 
 const router = express.Router();
@@ -66,6 +67,8 @@ router.put('/:id', async (req, res) => {
         res.status(404).json({ code: 404, msg: 'Unable to Update User' });
     }
 });
+
+
 
 async function registerUser(req, res) {
     const errors = validationResult(req);

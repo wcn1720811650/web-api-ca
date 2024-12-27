@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   username: { type: String, unique: true, required: true},
   password: {type: String, required: true },
-  favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movies', default: [] }]
+  favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movies', default: [] }],
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Reviews', default: [] }] 
 
 });
 UserSchema.methods.comparePassword = async function (passw) { 

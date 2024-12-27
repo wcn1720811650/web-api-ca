@@ -8,14 +8,24 @@ import { useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
-
+import { Avatar } from "@mui/material";
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 const SiteHeader = () => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const navigate = useNavigate();
-
+  const name = localStorage.getItem('username')
+  const firstChar = name.charAt(0)
+  //generate color for avatar
+  const generateColor=() =>{
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      const randomHex = Math.floor(Math.random() * 16).toString(16);
+      color += randomHex;
+    }
+    return color;
+  }
   const menuOptions = [
     { label: "Home", path: "/home" },
     { label: "Favorites", path: "/movies/favorites" },
@@ -29,9 +39,23 @@ const SiteHeader = () => {
         { label: "This Week", path: "/trending/week" },
       ],
     },
+    {
+      label:"Log Out",
+      path: "/logout",
+    },
+    {
+      label:<Avatar sx={{backgroundColor:generateColor}}>{firstChar}</Avatar>,
+    }
   ];
 
   const handleMenuSelect = (pageURL) => {
+    if (pageURL=="/logout") {
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      navigate("/login");
+      setSubMenuOpen(false);
+      return;
+    }
     navigate(pageURL);
     setSubMenuOpen(false);
   };

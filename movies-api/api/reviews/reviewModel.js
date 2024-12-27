@@ -16,6 +16,8 @@ const ReviewSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Movies',
       },
+    movieName: { type: String, default:''},
+    movieId: { type: String, default:''},
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 });

@@ -12,9 +12,7 @@ function AddReviewPage() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addReview(id, content);
-    console.log(await addReview(id, content));
-    
+    await addReview(id, content);    
     navigate(`/home`);
   };
 

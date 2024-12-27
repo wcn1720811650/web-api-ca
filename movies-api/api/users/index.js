@@ -4,7 +4,6 @@ import asyncHandler from 'express-async-handler';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator'
-import authenticate from '../../authenticate'
 
 
 const router = express.Router();

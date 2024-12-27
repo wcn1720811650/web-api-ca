@@ -40,6 +40,10 @@ const SiteHeader = () => {
       ],
     },
     {
+      label:"My Reviews",
+      path: "/reviews",
+    },
+    {
       label:"Log Out",
       path: "/logout",
     },
@@ -49,7 +53,7 @@ const SiteHeader = () => {
   ];
 
   const handleMenuSelect = (pageURL) => {
-    if (pageURL=="/logout") {
+    if (pageURL==="/logout") {
       localStorage.removeItem("token");
       localStorage.removeItem("username");
       navigate("/login");

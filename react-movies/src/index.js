@@ -20,7 +20,7 @@ import CombinedCreditsPage from "./pages/combinedCreditsPage";
 import LoginPage from "./pages/loginPage"
 import RegisterPage from "./pages/registerPage"
 import AddReviewPage from "./pages/addReviewPage";
-
+import MyReviewsPage from "./pages/myReviewPage";
 const queryClient = new QueryClient({
   defaultOptions:{
     queries:{
@@ -44,6 +44,7 @@ const App = () => {
           <Route path="/movies/:id/addReview" element={<AddReviewPage />} />
           <Route path="/trending/:timeWindow" element={<TredingPage />} />
           <Route path="/recommendations/:recommendationId" element={<MovieRecommendationPage />} />
+          <Route path="/reviews" element={<MyReviewsPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="*" element={ <Navigate to="/login" /> } />
           <Route path="/" element={<Navigate to="/login" />}/>

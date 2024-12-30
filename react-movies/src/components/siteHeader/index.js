@@ -16,7 +16,8 @@ const SiteHeader = () => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const navigate = useNavigate();
   const name = localStorage.getItem('username')
-  const firstChar = name.charAt(0)
+  const displayName = name ?? ""; 
+  const firstChar = displayName.charAt(0)
   //generate color for avatar
   const generateColor=() =>{
     let color = "#";

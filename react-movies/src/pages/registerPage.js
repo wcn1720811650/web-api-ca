@@ -4,21 +4,24 @@ import { Button } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import TextField from '@mui/material/TextField';
 
-const Login = () => {
+const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(null);
+    const [, setSuccess] = useState(null);
     const [confirmPassword, setConfirmPassword] = useState('');
 
-
+    
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault(); 
         setError(null); 
         setSuccess(null);
-
+        if (password !== confirmPassword){
+            setError("The two passwords are different");
+            return;
+        }
         try {
             const response = await fetch('http://localhost:8080/api/users?action=register', {
                 method: 'POST',
@@ -30,10 +33,7 @@ const Login = () => {
 
             if (response.ok) {
                 setSuccess(data.msg);
-                localStorage.setItem('token', data.token); 
                 navigate('/login')
-            } else if (password !== confirmPassword){
-                setError("The two passwords are different")
             }else {
                 setError(data.msg);
             }
@@ -88,4 +88,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
